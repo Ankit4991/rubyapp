@@ -1,0 +1,11 @@
+
+<p>
+   <strong>Title:</strong>
+   <%= @book.title %>
+</p>
+<p>
+   <strong>Text:</strong>
+   <%= @book.text %>
+</p>
+  <%=link_to "show pdf",@book.attachment.url %>
+  <%= link_to 'Back', books_path %>

@@ -1,0 +1,43 @@
+<body>
+  <br>
+  <div class="id">
+    <h1>Listing books</h1>
+    <br>
+      <%= link_to 'New book', new_book_path %>
+      <%= form_tag @book_path, :method => 'get' ,remote:true do %>
+    <p>  
+    <br>
+      <%= text_field_tag :search, params[:search], id: "search" %>
+      <%= submit_tag "Search",id: "search_btn" %>
+  </div>
+  <% end %>
+<br>
+<br>
+   <div class ="books">
+      <%= render 'books' %>
+   </div>
+<br>
+<br>
+<% if user_signed_in? %>
+  <li>
+    <%= button_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+
+<script type="text/javascript" src="somescript.js">
+   $("#search_btn").click(function(evt){
+     evt.preventDefault();
+      $.ajax({
+      type: "get",
+      url: "books_path",
+      data: $(this).serialize(),
+      success: function(response) {
+     }
+   });
+})
+</script>
+<% end %>
+</body>

@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: login_development
+  host: localhost
+  pool: 5
+  username: postgres
+  password: enbake
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: login_production
+  pool: 5
+  Port: 5432
+  Host: ec2-54-221-220-59.compute-1.amazonaws.com
+  Database: d76dq08gfpsnl
+  username: mcxisufsdpxgjm
+  Password: a5e7a176809abe665e3f8ac1a1d5cb9cb847890c145ede2b85a1821ce839e77e
